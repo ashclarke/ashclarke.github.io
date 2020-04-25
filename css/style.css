@@ -47,11 +47,11 @@
     }
 
     .color-scheme-toggle ~ main .moon {
-        animation-name: bounce-out-up;
+        animation-name: bounce-in-down;
     }
 
     .color-scheme-toggle:checked ~ main .sun {
-        animation-name: bounce-in-down;
+        animation-name: bounce-out-up;
     }
 }
 
