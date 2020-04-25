@@ -20,7 +20,8 @@
 @media (prefers-color-scheme: light) {
     :root {
         --background: var(--light-background);
-        --heading-color: var(--dark-heading);
+        --heading-color: var(--dark-text);
+        --body-color: var(--dark-text);
     }
 
     .sun {
@@ -65,6 +66,7 @@
     :root {
         --background: var(--dark-background);
         --heading-color: var(--light-text);
+        --body-color: var(--light-text);
     }
 
     .sun {
