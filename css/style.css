@@ -46,12 +46,12 @@
         display: none;
     }
 
-    .color-scheme-toggle ~ main .moon {
-        animation-name: bounce-in-down;
-    }
-
     .color-scheme-toggle:checked ~ main .sun {
         animation-name: bounce-out-up;
+    }
+
+    .color-scheme-toggle:checked ~ main .moon {
+        animation-name: bounce-in-down;
     }
 }
 
