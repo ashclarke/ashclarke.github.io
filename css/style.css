@@ -21,6 +21,14 @@
         --heading-color: var(--dark-heading);
     }
 
+    .sun {
+        animation-name: bounce-in-down;
+    }
+
+    .moon {
+        animation-name: bounce-out-up;
+    }
+
     .color-scheme-toggle:checked ~ main {
         --background: var(--dark-background);
         --heading-color: var(--light-heading);
@@ -53,6 +61,14 @@
         --heading-color: var(--light-heading);
     }
 
+    .sun {
+        animation-name: bounce-out-up;
+    }
+
+    .moon {
+        animation-name: bounce-in-down;
+    }
+
     .color-scheme-toggle:checked ~ main {
         --background: var(--light-background);
         --heading-color: var(--dark-heading);
@@ -60,14 +76,6 @@
 
     .color-scheme-toggle + label span:last-child {
         display: none;
-    }
-
-    .sun {
-        animation-name: bounce-out-up;
-    }
-
-    .moon {
-        animation-name: bounce-in-down;
     }
 
     .color-scheme-toggle:checked + label span:first-child {
