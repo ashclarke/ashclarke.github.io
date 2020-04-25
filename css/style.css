@@ -5,8 +5,10 @@
 :root {
     --celestial-body-size: 5rem;
     --emoji-font-family: "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
-    --light-heading: #f5f5f5;
-    --dark-heading: #111;
+    --heading-font: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --body-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --light-text: #f5f5f5;
+    --dark-text: #111;
     --light-background: linear-gradient(#3082c5, #61a4db 75%, #6daadd 90%, #00a064 90%);
     --dark-background: linear-gradient(#051522, #0d2941 75%, #1c3144 90%, #065035 90%);
     --short-transition: .25s;
@@ -31,7 +33,11 @@
 
     .color-scheme-toggle:checked ~ main {
         --background: var(--dark-background);
-        --heading-color: var(--light-heading);
+    }
+
+    .color-scheme-toggle:checked ~ main header {
+        --heading-color: var(--light-text);
+        --body-color: var(--light-text);
     }
 
     .color-scheme-toggle + label span:first-child {
@@ -58,7 +64,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --background: var(--dark-background);
-        --heading-color: var(--light-heading);
+        --heading-color: var(--light-text);
     }
 
     .sun {
@@ -71,7 +77,11 @@
 
     .color-scheme-toggle:checked ~ main {
         --background: var(--light-background);
-        --heading-color: var(--dark-heading);
+    }
+
+    .color-scheme-toggle:checked ~ main header {
+        --heading-color: var(--dark-text);
+        --body-color: var(--dark-text);
     }
 
     .color-scheme-toggle + label span:last-child {
@@ -189,14 +199,27 @@ main {
     content: "🌕";
 }
 
-main h1 {
-    margin-top: -5rem;
-    color: var(--heading-color);
-    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 3rem;
-    text-align: center;
+header {
+    display: grid;
+    place-items: center;
+    justify-items: center;
     animation: make-an-entrance .75s cubic-bezier(0.0, 0.0, 0.2, 1) .25s both;
     transition: color var(--medium-transition) var(--transition-easing);
+}
+
+header h1 {
+    margin-top: -5rem;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    text-align: center;
+}
+
+header span {
+    color: var(--body-color);
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 @keyframes bounce-out-up {
